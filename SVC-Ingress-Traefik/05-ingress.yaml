@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: hellov1.com 
+    http:
+      paths:
+      - backend:
+          serviceName: hello-v1-svc
+          servicePort: 80
+  - host: hellov2.com
+    http:
+      paths:
+      - backend:
+          serviceName: hello-v2-svc
+          servicePort: 80
