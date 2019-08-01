@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-v1
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
@@ -19,7 +19,7 @@ spec:
         resources:
           requests:
             memory: "64Mi"
-            cpu: "200m"
+            cpu: "100"
           limits:
             memory: "128Mi"
-            cpu: "500m"
+            cpu: "200m"
